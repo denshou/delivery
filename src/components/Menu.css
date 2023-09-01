@@ -1,0 +1,32 @@
+.menu-box{
+    border: 1px solid black;
+    width: 40rem;
+    height: 8rem;
+    margin-bottom: 4rem;
+    display: flex;
+    justify-content: space-between;
+}
+.menu-detail{
+    height: 4rem;
+    width: 10rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+}
+.menu-add{
+    height: 4rem;
+    width: 10rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.3rem;
+}
+
+.menu-add input {
+    width: 5rem;
+    margin-left: 1rem;
+}
+.menu-add button {
+    width: 6rem;
+}

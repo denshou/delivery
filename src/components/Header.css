@@ -1,0 +1,11 @@
+.header-line{
+    border-bottom: 1px solid black;
+   height: 3rem;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.title{
+    font-size: 2rem;
+}
