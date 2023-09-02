@@ -2,7 +2,7 @@ import "./App.css";
 import Header from './components/Header';
 import Body from './components/Body';
 import { useState } from "react";
-import Modal from "./components/Modal";
+// import Modal from "./components/Modal";
 
 
 function App() {
@@ -16,8 +16,8 @@ function App() {
   return (
     <div className="App">
       <Header isOpen={isOpen} setIsOpen={setIsOpen} />
-      <Body/>
-      {isOpen && <Modal isOpen={isOpen} setIsOpen={setIsOpen}/>}
+      <Body isOpen={isOpen} setIsOpen={setIsOpen}/>
+      {/* {isOpen && <Modal isOpen={isOpen} setIsOpen={setIsOpen}/>} */}
     </div>
   );
 }

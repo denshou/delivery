@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./Menu.css";
 
 const Menu = (props) => {
-  const [cnt, setCnt] = useState({ id: props.id, cnts: 0 });
+  const [cnt, setCnt] = useState({ id: props.id, cnts: 1 });
 
   const changeCnt = (event) => {
     setCnt((prevState) => ({ ...prevState, cnts: event.target.value }));
@@ -12,7 +12,7 @@ const Menu = (props) => {
     event.preventDefault();
     props.getCnt(cnt);
 
-    setCnt((prevState) => ({ ...prevState, cnts: 0 }));
+    setCnt((prevState) => ({ ...prevState, cnts: 1 }));
   };
 
   return (

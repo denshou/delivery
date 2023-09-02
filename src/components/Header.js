@@ -4,7 +4,7 @@ import "./Header.css";
 const Header = (props) => {
 
 
-  const openModalHandler = (event) => {
+  const openModalHandler = () => {
     
     props.setIsOpen(true);
     // props.getModalOpen(props.isOpen);

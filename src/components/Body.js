@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import "./Body.css";
 import Menu from "./Menu";
-import Modal from './Modal';
+import Modal from "./Modal";
 
-const Body = () => {
+const Body = (props) => {
   const [menu, setMenu] = useState([
     {
       id: 0,
@@ -40,7 +40,18 @@ const Body = () => {
     setMenu(copy);
   };
 
+  const modalInputChange = (modalCount) => {
+    // [0, 0, 0]
+    let copy = menu.map((menu) => {
+      return {
+        ...menu,
+        count: modalCount[`${menu.id}`],
+      };
+    });
+    setMenu(copy);
+  };
 
+  const modalButtonChange = () => {};
 
   let menuContent = menu.map((list) => (
     <Menu
@@ -52,11 +63,20 @@ const Body = () => {
       getCnt={getCnt}
     />
   ));
+
   return (
-  <div className="body">
-    {menuContent}
+    <div className="body">
+      {menuContent}
+      {props.isOpen && (
+        <Modal
+          isOpen={props.isOpen}
+          setIsOpen={props.setIsOpen}
+          menu={menu}
+          modalInputChange={modalInputChange}
+          modalButtonChange={modalButtonChange}
+        />
+      )}
     </div>
-  
   );
 };
 
