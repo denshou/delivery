@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./Body.css";
 import Menu from "./Menu";
+import Modal from './Modal';
 
 const Body = () => {
   const [menu, setMenu] = useState([
@@ -36,9 +37,10 @@ const Body = () => {
         return menu;
       }
     });
-    console.log(copy);
     setMenu(copy);
   };
+
+
 
   let menuContent = menu.map((list) => (
     <Menu
@@ -50,7 +52,12 @@ const Body = () => {
       getCnt={getCnt}
     />
   ));
-  return <div className="body">{menuContent}</div>;
+  return (
+  <div className="body">
+    {menuContent}
+    </div>
+  
+  );
 };
 
 export default Body;
