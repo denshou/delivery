@@ -20,12 +20,16 @@ const Modal = (props) => {
     // props.modalInputChange(modalCount);
   };
 
-  //   const minusClick = (event) => {
-  //     if (event.target.id === 0) cnt[0] = 0;
-  //     setModalCount(cnt);
-  //     console.log(cnt);
-  //     console.log(modalCount);
-  //   };
+  const minusClick = (event) => {
+    console.log(event);
+    cnt[event.target.id]--;
+    setModalCount(cnt);
+    //if cnt===0 버튼 disabled
+  };
+  const plusClick = (event) => {
+    cnt[event.target.id]++;
+    setModalCount(cnt);
+  };
 
   const closeModal = () => {
     props.setIsOpen(false);
@@ -50,20 +54,15 @@ const Modal = (props) => {
                   id={`${menus.id}`}
                   value={modalCount[`${menus.id}`]}
                   onChange={changeModalCount}
+                  min={1}
                 />
               </div>
             </div>
             <div className="plus-minus-buttons">
-              <button
-                // onClick={minusClick}
-                id={`${menus.id}`}
-              >
+              <button onClick={minusClick} id={`${menus.id}`} className="minus">
                 -
               </button>
-              <button
-                // onClick={plusClick}
-                id={`${menus.id}`}
-              >
+              <button onClick={plusClick} id={`${menus.id}`} className="plus">
                 +
               </button>
             </div>

@@ -30,6 +30,7 @@ const Menu = (props) => {
             id={`menu${props.id}`}
             value={cnt.cnts}
             onChange={changeCnt}
+            min={1}
           />
         </div>
         <div className="menu-add">
