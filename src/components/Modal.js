@@ -21,7 +21,6 @@ const Modal = (props) => {
   };
 
   const minusClick = (event) => {
-    console.log(event);
     cnt[event.target.id]--;
     setModalCount(cnt);
     //if cnt===0 버튼 disabled
